@@ -9,7 +9,7 @@ void UMy_ShooterCharacterMovement::Teleport()
 	
 	// If we are the client and we have control we send the location to the server 
 	if (PawnOwner->Role == ENetRole::ROLE_AutonomousProxy) 
-		Server_SendTeleportLocation_Validate(TeleportLocation);
+		Server_SendTeleportLocation(TeleportLocation);
 
 	// This boolean will trigger the movement in the OnMovementUpdated function native of the standard Movement Component
 	bWantsToTeleport = true;
